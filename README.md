@@ -1,7 +1,7 @@
 # Project_Python_1
 Картинки и описание будут позже (не зашарил пока как оформлять этот файл)
 
-Установка:
+Установка:  
 git clone git@github.com:Mikhail-Sibiryakov/Project_Python_1.git  
 cd Project_Python_1  
 chmod +x install.sh  
