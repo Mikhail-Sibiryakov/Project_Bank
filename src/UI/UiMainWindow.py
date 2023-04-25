@@ -187,7 +187,8 @@ class UiMainWindow(object):
     def initClientAccount(self):
         """Инициализация страницы-кабинета клиента"""
         self.widget_client_account = QtWidgets.QWidget(self.window)
-        self.vbox_bank_accounts = QtWidgets.QVBoxLayout(self.widget_client_account)
+        self.vbox_bank_accounts = QtWidgets.QVBoxLayout(
+            self.widget_client_account)
         self.vbox_client_account_main = QtWidgets.QVBoxLayout()
         self.hbox_client_account_top_bar = QtWidgets.QHBoxLayout()
 
@@ -202,6 +203,7 @@ class UiMainWindow(object):
             SIZE_HEIGHT_TOP_BUTTON)
         self.push_btn_create_bank_account.clicked.connect(
             self.onClickOpenBankAccount)
+        
         self.push_btn_show_all_transaction = QtWidgets.QPushButton(
             MY_TRANSACTIONS)
         self.push_btn_show_all_transaction.setMinimumSize(
@@ -253,7 +255,8 @@ class UiMainWindow(object):
     def initClientTransaction(self):
         """Инициализация страницы показа транзакций"""
         self.widget_client_transaction = QtWidgets.QWidget(self.window)
-        self.vbox_bank_transaction = QtWidgets.QVBoxLayout(self.widget_client_transaction)
+        self.vbox_bank_transaction = QtWidgets.QVBoxLayout(
+            self.widget_client_transaction)
         self.vbox_client_transaction_main = QtWidgets.QVBoxLayout()
         self.hbox_client_transaction_top_bar = QtWidgets.QHBoxLayout()
 
