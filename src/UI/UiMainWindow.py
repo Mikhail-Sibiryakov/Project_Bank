@@ -626,7 +626,11 @@ class UiMainWindow(object):
         builder = BuilderClient().firstName(first_name).secondName(
             second_name).address(address)
         if seria != EMPTY and number != EMPTY:
-            builder = builder.passport(int(seria), int(number))
+            try:
+                builder = builder.passport(int(seria), int(number))
+            except ValueError:
+                self.showStandardWarning(INVALID_PASSPORT)
+                return
         self.client = builder.build()
 
         self.showClientAccount()
