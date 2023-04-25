@@ -3,3 +3,5 @@ src/Database/__pycache__
 src/Helpers/__pycache__
 src/Structures/__pycache__
 src/UI/__pycache__
+.idea/
+venv/

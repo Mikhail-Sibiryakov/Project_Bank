@@ -68,8 +68,8 @@ class Money:
         return sign + str(abs_value // 100) + '.' + part
 
     def getPercent(self, percent: str):
-        """По строке вида "5.61" возвращает соответствующее значение процента от
-        суммы денег объекта
+        """По строке вида "5.61" возвращает соответствующее значение процента
+        от суммы денег объекта
         Возвращает Money"""
         if '.' not in percent:
             raise Exceptions.InvalidArgPercentError
@@ -80,7 +80,7 @@ class Money:
             raise Exceptions.InvalidArgPercentError
         value = int(self)
         tmp = (value * (int(whole) * 100 + int(part)))
-        return Money(tmp // 10**4)
+        return Money(tmp // 10 ** 4)
 
     def getCents(self):
         return self.__cents

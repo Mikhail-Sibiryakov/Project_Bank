@@ -150,7 +150,8 @@ class UiMainWindow(object):
 
     def initCreateBank(self):
         """Инициализация страницы создание банка"""
-        self.create_bank_vertical_layout_widget = QtWidgets.QWidget(self.window)
+        self.create_bank_vertical_layout_widget = QtWidgets.QWidget(
+            self.window)
         self.create_bank_vertical_layout = QtWidgets.QVBoxLayout(
             self.create_bank_vertical_layout_widget)
         self.create_bank_horizontal_layout = QtWidgets.QHBoxLayout()
@@ -179,8 +180,9 @@ class UiMainWindow(object):
              self.create_bank_vertical_layout_widget]
 
         QtCore.QMetaObject.connectSlotsByName(self.window)
-        self.main_grid_layout.addWidget(self.create_bank_vertical_layout_widget,
-                                        1, 1, 1, 1)
+        self.main_grid_layout.addWidget(
+            self.create_bank_vertical_layout_widget,
+            1, 1, 1, 1)
 
     def initClientAccount(self):
         """Инициализация страницы-кабинета клиента"""
@@ -198,15 +200,17 @@ class UiMainWindow(object):
 
         self.push_btn_create_bank_account = QtWidgets.QPushButton()
         self.push_btn_create_bank_account.setText(CREATE_BANK_ACCOUNT)
-        self.push_btn_create_bank_account.setMinimumSize(SIZE_WIDTH_TOP_BUTTON,
-                                                         SIZE_HEIGHT_TOP_BUTTON)
+        self.push_btn_create_bank_account.setMinimumSize(
+            SIZE_WIDTH_TOP_BUTTON,
+            SIZE_HEIGHT_TOP_BUTTON)
         self.push_btn_create_bank_account.clicked.connect(
             self.onClickOpenBankAccount)
 
         self.push_btn_show_all_transaction = QtWidgets.QPushButton(
             MY_TRANSACTIONS)
-        self.push_btn_show_all_transaction.setMinimumSize(SIZE_WIDTH_TOP_BUTTON,
-                                                          SIZE_HEIGHT_TOP_BUTTON)
+        self.push_btn_show_all_transaction.setMinimumSize(
+            SIZE_WIDTH_TOP_BUTTON,
+            SIZE_HEIGHT_TOP_BUTTON)
         self.push_btn_show_all_transaction.clicked.connect(
             self.onClickShowAllTransaction)
 
@@ -240,8 +244,8 @@ class UiMainWindow(object):
         self.vbox_client_account_main.addLayout(
             self.hbox_client_account_top_bar)
         self.vbox_client_account_main.addWidget(self.scroll)
-        self.main_grid_layout.addLayout(self.vbox_client_account_main, 1, 1, 1,
-                                        1)
+        self.main_grid_layout.addLayout(
+            self.vbox_client_account_main, 1, 1, 1, 1)
 
         self.all_items.client_account = [self.widget_client_account,
                                          self.scroll,
@@ -288,8 +292,8 @@ class UiMainWindow(object):
         self.vbox_client_transaction_main.addLayout(
             self.hbox_client_transaction_top_bar)
         self.vbox_client_transaction_main.addWidget(self.scroll_transaction)
-        self.main_grid_layout.addLayout(self.vbox_client_transaction_main, 1, 1,
-                                        1, 1)
+        self.main_grid_layout.addLayout(
+            self.vbox_client_transaction_main, 1, 1, 1, 1)
 
         self.all_items.client_transaction = [self.widget_client_transaction,
                                              self.scroll_transaction,
@@ -342,7 +346,8 @@ class UiMainWindow(object):
 
         self.line_edit_seria = QtWidgets.QLineEdit(
             self.create_client_layout_widget)
-        self.create_client_edits_vertical_layout.addWidget(self.line_edit_seria)
+        self.create_client_edits_vertical_layout.addWidget(
+            self.line_edit_seria)
 
         self.line_edit_number = QtWidgets.QLineEdit(
             self.create_client_layout_widget)
@@ -375,8 +380,8 @@ class UiMainWindow(object):
         self.create_client_main_vertical_layout.addWidget(
             self.change_data_push_btn_back)
 
-        self.main_grid_layout.addWidget(self.create_client_layout_widget, 1, 1,
-                                        1, 1)
+        self.main_grid_layout.addWidget(
+            self.create_client_layout_widget, 1, 1, 1, 1)
 
         self.label_first_name.setText(FIRST_NAME)
         self.label_second_name.setText(SECOND_NAME)
@@ -384,18 +389,19 @@ class UiMainWindow(object):
         self.label_number.setText(NUMBER_PASSPORT)
         self.label_address.setText(ADDRESS)
         self.push_btn_create_client.setText(SIGN_UP)
-        self.all_items.create_client_window = [self.label_first_name,
-                                               self.label_second_name,
-                                               self.label_seria,
-                                               self.label_number,
-                                               self.push_btn_create_client,
-                                               self.line_edit_number,
-                                               self.line_edit_first_name,
-                                               self.line_edit_seria,
-                                               self.line_edit_second_name,
-                                               self.create_client_layout_widget,
-                                               self.line_edit_address,
-                                               self.label_address]
+        self.all_items.create_client_window = [
+            self.label_first_name,
+            self.label_second_name,
+            self.label_seria,
+            self.label_number,
+            self.push_btn_create_client,
+            self.line_edit_number,
+            self.line_edit_first_name,
+            self.line_edit_seria,
+            self.line_edit_second_name,
+            self.create_client_layout_widget,
+            self.line_edit_address,
+            self.label_address]
 
     def initBankManagerAccount(self):
         """Инициализация страницы для управления банком"""
@@ -422,14 +428,15 @@ class UiMainWindow(object):
             self.line_edit_change_name_bank, 0, 1)
         self.bank_manager_account_main_grid.addWidget(
             self.line_edit_set_limit_bank, 1, 1)
-        self.bank_manager_account_main_grid.addWidget(push_btn_change_name, 0,
-                                                      2)
+        self.bank_manager_account_main_grid.addWidget(
+            push_btn_change_name, 0, 2)
         self.bank_manager_account_main_grid.addWidget(push_btn_set_limit, 1, 2)
 
-        self.main_grid_layout.addWidget(self.bank_manager_account_widget, 1, 1,
-                                        1, 1)
+        self.main_grid_layout.addWidget(
+            self.bank_manager_account_widget, 1, 1, 1, 1)
 
-        self.all_items.bank_manager_account = [self.bank_manager_account_widget]
+        self.all_items.bank_manager_account = [
+            self.bank_manager_account_widget]
 
     def initTopUp(self):
         """Инициализация страницы пополнения баланса счёта"""
@@ -439,7 +446,8 @@ class UiMainWindow(object):
         btn_cancel = QtWidgets.QPushButton()
         btn_cancel.setText(CANCEL)
         btn_cancel.clicked.connect(self.showClientAccount)
-        btn_cancel.setMinimumSize(SIZE_WIDTH_TYPICAL_BUTTON, SIZE_HEIGHT_BUTTON)
+        btn_cancel.setMinimumSize(SIZE_WIDTH_TYPICAL_BUTTON,
+                                  SIZE_HEIGHT_BUTTON)
 
         self.btn_top_up = QtWidgets.QPushButton()
         self.btn_top_up.setText(TOP_UP)
@@ -486,7 +494,8 @@ class UiMainWindow(object):
         btn_cancel = QtWidgets.QPushButton()
         btn_cancel.setText(CANCEL)
         btn_cancel.clicked.connect(self.showClientAccount)
-        btn_cancel.setMinimumSize(SIZE_WIDTH_TYPICAL_BUTTON, SIZE_HEIGHT_BUTTON)
+        btn_cancel.setMinimumSize(SIZE_WIDTH_TYPICAL_BUTTON,
+                                  SIZE_HEIGHT_BUTTON)
         self.btn_transfer = QtWidgets.QPushButton()
         self.btn_transfer.setText(TRANSFER)
         self.btn_transfer.clicked.connect(self.transfer)
@@ -560,12 +569,13 @@ class UiMainWindow(object):
         self.edit_text_name_bank_account.setMinimumSize(
             SIZE_WIDTH_TYPICAL_BUTTON, SIZE_HEIGHT_BUTTON)
 
-        self.new_bank_account_bth_cancel.clicked.connect(self.showClientAccount)
+        self.new_bank_account_bth_cancel.clicked.connect(
+            self.showClientAccount)
         self.new_bank_account_bth_create.clicked.connect(
             self.createNewBankAccount)
 
-        self.main_grid_layout.addWidget(self.new_bank_account_widget, 1, 1, 1,
-                                        1)
+        self.main_grid_layout.addWidget(
+            self.new_bank_account_widget, 1, 1, 1, 1)
         self.all_items.new_bank_account = [self.new_bank_account_widget,
                                            self.new_bank_account_bank_list]
 
@@ -906,7 +916,8 @@ class UiMainWindow(object):
             hbox = QtWidgets.QHBoxLayout(widget)
 
             button_undo = QtWidgets.QPushButton(
-                CANCEL_TRANSACTION if not is_undo_list[i] else BACK_TRANSACTION)
+                CANCEL_TRANSACTION if not is_undo_list[
+                    i] else BACK_TRANSACTION)
             button_undo.clicked.connect(
                 lambda checked, tmp=id_list[i]: self.undoTransaction(tmp))
             button_undo.setMaximumSize(INF, INF)
@@ -1047,14 +1058,15 @@ class UiMainWindow(object):
                      ' ' + str(transaction.amount) + '\n' + WHOM + \
                      ' ' + transaction.other.id_account.owner.first_name + \
                      ' ' + transaction.other.id_account.owner.second_name
-        string += '\n' + BANK + ' ' + transaction.account.id_account.bank.name\
-                  + '\n'
+        string += '\n' + BANK + ' ' + \
+                  transaction.account.id_account.bank.name + '\n'
         string += NAME_ACCOUNT + ' ' + transaction.account.name_account + '\n'
         string += TYPE_BANK_ACCOUNTS + ' ' + self.getType(transaction.account)
         return string
 
     def transfer(self):
-        """Переводит деньги в соответствии с введёнными пользователем данными"""
+        """Переводит деньги в соответствии с введёнными пользователем
+        данными"""
         name = self.transfer_combo_box.currentText()
         amount = self.transfer_le_amount.text()
         if '.' not in amount:

@@ -20,7 +20,8 @@ class DbWriter:
         with sq.connect(MyConstants.DB_NAME) as connect:
             cursor = connect.cursor()
             command = MyConstants.CREATE_TABLE + " " + name_table + " " + '('
-            command += MyConstants.ID + " " + MyConstants.INT + " " + MyConstants.AUTO_INC
+            command += MyConstants.ID + " " + MyConstants.INT + " " + \
+                       MyConstants.AUTO_INC
             for i in zip(columns, types):
                 command += ',' + i[0] + " " + i[1] + " DEFAULT NULL "
             command += ')'
@@ -39,7 +40,8 @@ class DbWriter:
             cursor.execute(command)
             connect.commit()
         tmp = \
-        cursor.execute("SELECT max(_ID) FROM " + name_table).fetchall()[0][0]
+            cursor.execute("SELECT max(_ID) FROM " + name_table).fetchall()[0][
+                0]
         return tmp
 
     def update(self, name_table: str, d: dict, _id):

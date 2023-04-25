@@ -190,7 +190,8 @@ class CreditAccount(BankAccount):
             self.id_account.id
 
     def getLimit(self):
-        """Возвращает максимальную сумму денег, на которую можно уйти в минус"""
+        """Возвращает максимальную сумму денег, на которую можно уйти в
+        минус"""
         return self.__credit_limit
 
     def getInterestRate(self):

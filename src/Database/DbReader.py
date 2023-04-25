@@ -50,8 +50,8 @@ class DbReader:
             return WithdrawTransaction(acc, Money(amount), bool(is_undo), _ID)
         if type_tr == str(Types.TypeTransaction.TRANSFER):
             other = self.getBankAccountById(other_acc)
-            return TransferTransaction(acc, other, Money(amount), bool(is_undo),
-                                       _ID)
+            return TransferTransaction(acc, other, Money(amount),
+                                       bool(is_undo), _ID)
 
     def getBankByName(self, name: str) -> Bank:
         """Возвращает объект банка по его имени"""
@@ -73,7 +73,8 @@ class DbReader:
             res = BankAccount.DebitAccount(bank, self.getClientById(id_owner),
                                            name, Money(balance), _ID)
         elif int(type_acc) == Types.TypeBankAccount.DEPOSIT:
-            res = BankAccount.DepositAccount(bank, self.getClientById(id_owner),
+            res = BankAccount.DepositAccount(bank,
+                                             self.getClientById(id_owner),
                                              name, Money(balance), end_date,
                                              _ID)
         elif int(type_acc) == Types.TypeBankAccount.CREDIT:
@@ -110,9 +111,10 @@ class DbReader:
                     Transaction.WithdrawTransaction(acc_from, Money(amount),
                                                     bool(int(is_undo)), _ID))
             elif int(type_tr) == Types.TypeTransaction.TOP_UP:
-                ans.append(Transaction.TopUpTransaction(acc_from, Money(amount),
-                                                        bool(int(is_undo)),
-                                                        _ID))
+                ans.append(
+                    Transaction.TopUpTransaction(acc_from, Money(amount),
+                                                 bool(int(is_undo)),
+                                                 _ID))
             elif int(type_tr) == Types.TypeTransaction.TRANSFER:
                 ans.append(Transaction.TransferTransaction(
                     acc_from,

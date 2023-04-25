@@ -15,8 +15,8 @@ def getMathEntry(table_name: str, parameters: dict) -> list:
     with sq.connect(MyConstants.DB_NAME) as connect:
         cursor = connect.cursor()
         keys = tuple(parameters.keys())
-        command = "SELECT * FROM " + table_name + " WHERE " + keys[0] + " == " \
-                  + string_wrapper(parameters[keys[0]])
+        command = "SELECT * FROM " + table_name + " WHERE " + keys[
+            0] + " == " + string_wrapper(parameters[keys[0]])
         for i in range(1, len(keys)):
             if parameters[keys[i]] == "NULL":
                 command += " and " + keys[i] + " is NULL"
@@ -45,8 +45,8 @@ def deleteMathEntry(table_name: str, parameters: dict):
     with sq.connect(MyConstants.DB_NAME) as connect:
         cursor = connect.cursor()
         keys = tuple(parameters.keys())
-        command = "DELETE FROM " + table_name + " WHERE " + keys[0] + " == " + \
-                  string_wrapper(parameters[keys[0]])
+        command = "DELETE FROM " + table_name + " WHERE " + keys[
+            0] + " == " + string_wrapper(parameters[keys[0]])
         for i in range(1, len(keys)):
             if parameters[keys[i]] == "NULL":
                 command += " and " + keys[i] + " is NULL"
