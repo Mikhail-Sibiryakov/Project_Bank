@@ -25,3 +25,31 @@ chmod +x run.sh
 ```bash
 ./run.sh
 ```
+
+## Работа приложения
+Стартовое окно
+![Стартовое окно](images/StartWindow.png)
+
+Регистрация клиента
+![](images/SignUpClient.png)
+
+Авторизация клиента
+![](images/AuthorizationClient.png)
+
+Окно управления банком
+![](images/BankWindow.png)
+
+Окно кабинета клиента
+![](images/ClientAccountWindow.png)
+
+Окно изменения данных клинета
+![](images/ChangeClientDataWindow.png)
+
+Окно перевода денег
+![](images/TransferWindow.png)
+
+Окно создание счёта
+![](images/CreateBankAccountWindow.png)
+
+Окно просмотра транзакций
+![](images/TransactionWindow.png)
