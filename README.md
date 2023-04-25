@@ -8,5 +8,5 @@ chmod +x install.sh
 chmod +x run.sh  
 ./install.sh  
 
-Запуск:
+Запуск:  
 ./run.sh
