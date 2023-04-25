@@ -1,2 +1,3 @@
 #!/bin/bash
-PYTHONPATH=src python3 main.py 2>/dev/null
+XDG_SESSION_TYPE=x11
+PYTHONPATH=src python3 main.py
